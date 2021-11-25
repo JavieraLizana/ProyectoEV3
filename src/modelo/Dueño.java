@@ -7,7 +7,7 @@ package modelo;
 
 /**
  *
- * @author maxim
+ * @author maximiliano y Javiera
  */
 public class Dueño {
     

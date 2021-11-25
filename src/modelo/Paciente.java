@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  *
- * @author javiera Lizana
+ * @author javiera y Maximiliano
  * @version 25-11-2021
  */
 public class Paciente {
