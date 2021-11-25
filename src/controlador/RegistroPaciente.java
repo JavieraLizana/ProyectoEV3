@@ -32,7 +32,7 @@ public class RegistroPaciente {
             stmt.setString(4, paciente.getRaza());
             stmt.setInt(5, paciente.getEdad());
             stmt.setInt(6, paciente.getPeso());
-            stmt.setBoolean(7, paciente.isSexo());
+            stmt.setString(7, String.valueOf (paciente.getSexo()));
             stmt.setString(8, paciente.getProcedimiento());
 
             stmt.executeUpdate();
@@ -51,3 +51,4 @@ public class RegistroPaciente {
     }
 
 }
+
