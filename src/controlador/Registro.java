@@ -7,7 +7,8 @@ package controlador;
 
 /**
  *
- * @author maxim
+ * @author Maximiliano Lasmar colboración Javiera Lizana.
+ * @version 25/11/2021.
  */
 public class Registro {
     
