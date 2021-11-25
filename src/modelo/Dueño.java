@@ -7,7 +7,7 @@ package modelo;
 
 /**
  *
- * @author maxim
+ * @author Maximiliano Lasmar
  */
 public class Dueño {
     
