@@ -12,12 +12,12 @@ public class Paciente {
     private int idConsulta, edad, peso;
     private String nombreMascota, especie, raza, procedimiento;
     private Date fechaConsulta;
-    private boolean sexo;
+    private char sexo;
 
     public Paciente() {
     }
 
-    public Paciente(int idConsulta, int edad, int peso, String nombreMascota, String especie, String raza, String procedimiento, Date fechaConsulta, boolean sexo) {
+    public Paciente(int idConsulta, int edad, int peso, String nombreMascota, String especie, String raza, String procedimiento, Date fechaConsulta, char sexo) {
         this.idConsulta = idConsulta;
         this.edad = edad;
         this.peso = peso;
@@ -93,11 +93,11 @@ public class Paciente {
         this.fechaConsulta = fechaConsulta;
     }
 
-    public boolean isSexo() {
+    public char getSexo() {
         return sexo;
     }
 
-    public void setSexo(boolean sexo) {
+    public void setSexo(char sexo) {
         this.sexo = sexo;
     }
     
