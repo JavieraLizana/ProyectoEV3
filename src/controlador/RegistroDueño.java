@@ -129,6 +129,7 @@ public class RegistroDueño {
                 dueño.setDireccionCalle(rsl.getString("direccionCalle"));
                 dueño.setDireccionNro(rsl.getInt("dreccionNro"));
                 dueño.setTelefono(rsl.getInt("telefono"));
+               dueño.setIdConsulta(rsl.getInt("idConsulta"));
                 dueño.setValor(rsl.getInt("valor"));
 
             }
