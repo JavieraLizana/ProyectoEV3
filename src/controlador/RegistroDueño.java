@@ -1,5 +1,3 @@
-
-
 package controlador;
 
 import bd.Conexion;
@@ -8,6 +6,8 @@ import modelo.Dueño;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 /**
  *
@@ -50,7 +50,7 @@ public class RegistroDueño {
         try {
             Conexion con = new Conexion();
             Connection cnt = con.obtenerConexion();
-            
+
             String query = "UPDATE dueño SET rut=?, nombre=?, apellido=?, direccionCalle=?, direccionNro=?, telefono=? WHERE rut=?";
             PreparedStatement stmt = cnt.prepareStatement(query);
 
@@ -100,4 +100,79 @@ public class RegistroDueño {
         }
 
     }
+
+    public Dueño buscarDueño(int rut) {
+
+        Dueño dueño = new Dueño();
+
+        try {
+
+            Conexion conx = new Conexion();
+            Connection cnt = conx.obtenerConexion();
+
+            String query = "SELECT * FROM dueño WHERE rut=?";
+            PreparedStatement stmt = cnt.prepareStatement(query);
+            stmt.setInt(1, rut);
+
+            ResultSet rsl = stmt.executeQuery();
+
+            if (rsl.next()) {
+
+                dueño.setRut(rsl.getInt("rut"));
+                dueño.setNombre(rsl.getString("nombre"));
+                dueño.setApellido(rsl.getString("apellido"));
+                dueño.setDireccionCalle(rsl.getString("direccionCalle"));
+                dueño.setDireccionNro(rsl.getInt("dreccionNro"));
+                dueño.setTelefono(rsl.getInt("telefono"));
+
+            }
+
+            rsl.close();
+            stmt.close();
+            cnt.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error SQL al listar al paciente por id" + e.getMessage());
+
+        }
+
+        return dueño;
+    }
+
+    public ArrayList<Dueño> buscartodo() {
+        ArrayList<Dueño> lista = new ArrayList();
+
+        try {
+
+            Conexion conx = new Conexion();
+            Connection cnt = conx.obtenerConexion();
+
+            String query = "SELECT * FROM dueño ORDER BY apellido";
+            PreparedStatement stmt = cnt.prepareStatement(query);
+
+            ResultSet rsl = stmt.executeQuery();
+
+            while (rsl.next()) {
+
+                Dueño dueño = new Dueño();
+
+                dueño.setRut(rsl.getInt("rut"));
+                dueño.setNombre(rsl.getString("nombre"));
+                dueño.setApellido(rsl.getString("apellido"));
+                dueño.setDireccionCalle(rsl.getString("direccionCalle"));
+                dueño.setDireccionNro(rsl.getInt("direccionNro"));
+                dueño.setTelefono(rsl.getInt("telefono"));
+                lista.add(dueño);
+
+            }
+            rsl.close();
+            stmt.close();
+            cnt.close();
+
+        } catch (Exception e) {
+            System.out.println("Error SQL al listr todos los dueños." + e.getMessage());
+        }
+        return lista;
+    }
+
 }
