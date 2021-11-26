@@ -11,7 +11,7 @@ package modelo;
  */
 public class Dueño {
     
-    private int rut, direccionNro, telefono;
+    private int rut,direccionNro, telefono;
     private String nombre, apellido, direccionCalle;
 
     public Dueño() {

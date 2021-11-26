@@ -6,6 +6,8 @@ import modelo.Paciente;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 /**
  *
@@ -32,7 +34,7 @@ public class RegistroPaciente {
             stmt.setString(4, paciente.getRaza());
             stmt.setInt(5, paciente.getEdad());
             stmt.setInt(6, paciente.getPeso());
-            stmt.setString(7, String.valueOf(paciente.getSexo()));
+            stmt.setString(7, paciente.getSexo());
             stmt.setString(8, paciente.getProcedimiento());
 
             stmt.executeUpdate();
@@ -69,7 +71,7 @@ public class RegistroPaciente {
             stmt.setString(4, paciente.getRaza());
             stmt.setInt(5, paciente.getEdad());
             stmt.setInt(6, paciente.getPeso());
-            stmt.setString(7, String.valueOf(paciente.getSexo()));
+            stmt.setString(7, paciente.getSexo());
             stmt.setString(8, paciente.getProcedimiento());
             stmt.setInt(9, paciente.getIdConsulta());
 
@@ -115,5 +117,91 @@ public class RegistroPaciente {
         }
 
     }
-    
+
+    public Paciente buscarPaciente(int idConsulta) {
+
+        Paciente paciente = new Paciente();
+
+        try {
+
+            Conexion conx = new Conexion();
+            Connection cnx = conx.obtenerConexion();
+
+            String query = "SELECT * FROM paciente WHERE idConsulta=?";
+            PreparedStatement stmt = cnx.prepareStatement(query);
+            stmt.setInt(1, idConsulta);
+
+            ResultSet result = stmt.executeQuery();
+
+            if (result.next()) {
+
+                paciente.setIdConsulta(result.getInt("idConsulta"));
+                paciente.setFechaConsulta(result.getDate("fechaConsulta"));
+                paciente.setNombreMascota(result.getString("nombreMascota"));
+                paciente.setEspecie(result.getString("especie"));
+                paciente.setRaza(result.getString("raza"));
+                paciente.setEdad(result.getInt("edad"));
+                paciente.setPeso(result.getInt("peso"));
+                paciente.setSexo(result.getString("sexo"));
+
+            }
+
+            result.close();
+            stmt.close();
+            cnx.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error SQL al listar al paciente por id" + e.getMessage());
+
+        }
+
+        return paciente;
+    }
+
+    public ArrayList<Paciente> buscarTodo() {
+
+        ArrayList <Paciente> lista = new ArrayList<>();
+        
+         try {
+
+            Conexion conx = new Conexion();
+            Connection cnx = conx.obtenerConexion();
+
+            String query = "SELECT * FROM paciente ORDER BY idConsulta";
+            PreparedStatement stmt = cnx.prepareStatement(query);
+           
+
+            ResultSet result = stmt.executeQuery();
+
+            while (result.next()) {
+                
+                Paciente paciente = new Paciente();
+
+                paciente.setIdConsulta(result.getInt("idConsulta"));
+                paciente.setFechaConsulta(result.getDate("fechaConsulta"));
+                paciente.setNombreMascota(result.getString("nombreMascota"));
+                paciente.setEspecie(result.getString("especie"));
+                paciente.setRaza(result.getString("raza"));
+                paciente.setEdad(result.getInt("edad"));
+                paciente.setPeso(result.getInt("peso"));
+                paciente.setSexo(result.getString("sexo"));
+
+                lista.add(paciente);
+                
+            }
+
+            result.close();
+            stmt.close();
+            cnx.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error SQL al listar todos los paciente" + e.getMessage());
+
+        }
+
+        return lista;
+        
+    }
+
 }
+

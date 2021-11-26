@@ -10,23 +10,22 @@ import java.util.Date;
 public class Paciente {
 
     private int idConsulta, edad, peso;
-    private String nombreMascota, especie, raza, procedimiento;
+    private String nombreMascota, especie, raza, sexo,procedimiento;
     private Date fechaConsulta;
-    private char sexo;
 
     public Paciente() {
     }
 
-    public Paciente(int idConsulta, int edad, int peso, String nombreMascota, String especie, String raza, String procedimiento, Date fechaConsulta, char sexo) {
+    public Paciente(int idConsulta, int edad, int peso, String nombreMascota, String especie, String raza, String sexo, String procedimiento, Date fechaConsulta) {
         this.idConsulta = idConsulta;
         this.edad = edad;
         this.peso = peso;
         this.nombreMascota = nombreMascota;
         this.especie = especie;
         this.raza = raza;
+        this.sexo = sexo;
         this.procedimiento = procedimiento;
         this.fechaConsulta = fechaConsulta;
-        this.sexo = sexo;
     }
 
     public int getIdConsulta() {
@@ -77,6 +76,14 @@ public class Paciente {
         this.raza = raza;
     }
 
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
     public String getProcedimiento() {
         return procedimiento;
     }
@@ -93,13 +100,5 @@ public class Paciente {
         this.fechaConsulta = fechaConsulta;
     }
 
-    public char getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(char sexo) {
-        this.sexo = sexo;
-    }
-    
-    
 }
+
