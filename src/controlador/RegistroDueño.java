@@ -20,7 +20,7 @@ public class RegistroDueño {
         try {
             Conexion con = new Conexion();
             Connection cnt = con.obtenerConexion();
-            String query = "INSERT INTO dueño(rut, nombre, apellido, direccionCalle, direccionNro, telefono) VALUES (?,?,?,?,?,?)";
+            String query = "INSERT INTO dueño(rut, nombre, apellido, direccionCalle, direccionNro, telefono, idConsulta, valor) VALUES (?,?,?,?,?,?,?,?)";
             PreparedStatement stmt = cnt.prepareStatement(query);
 
             stmt.setInt(1, dueño.getRut());
@@ -29,6 +29,9 @@ public class RegistroDueño {
             stmt.setString(4, dueño.getDireccionCalle());
             stmt.setInt(5, dueño.getDireccionNro());
             stmt.setInt(6, dueño.getTelefono());
+            stmt.setInt(7, dueño.getIdConsulta());
+            stmt.setInt(8, dueño.getValor());
+
 
             stmt.executeUpdate();
             stmt.close();
@@ -51,7 +54,7 @@ public class RegistroDueño {
             Conexion con = new Conexion();
             Connection cnt = con.obtenerConexion();
 
-            String query = "UPDATE dueño SET rut=?, nombre=?, apellido=?, direccionCalle=?, direccionNro=?, telefono=? WHERE rut=?";
+            String query = "UPDATE dueño SET rut=?, nombre=?, apellido=?, direccionCalle=?, direccionNro=?, telefono=?, idConsulta=? , valor=? WHERE rut=?";
             PreparedStatement stmt = cnt.prepareStatement(query);
 
             stmt.setInt(1, dueño.getRut());
@@ -60,6 +63,8 @@ public class RegistroDueño {
             stmt.setString(4, dueño.getDireccionCalle());
             stmt.setInt(5, dueño.getDireccionNro());
             stmt.setInt(6, dueño.getTelefono());
+            stmt.setInt(7, dueño.getIdConsulta());
+            stmt.setInt(8, dueño.getValor());
 
             stmt.executeUpdate();
             stmt.close();
@@ -124,6 +129,7 @@ public class RegistroDueño {
                 dueño.setDireccionCalle(rsl.getString("direccionCalle"));
                 dueño.setDireccionNro(rsl.getInt("dreccionNro"));
                 dueño.setTelefono(rsl.getInt("telefono"));
+                dueño.setValor(rsl.getInt("valor"));
 
             }
 
@@ -162,6 +168,8 @@ public class RegistroDueño {
                 dueño.setDireccionCalle(rsl.getString("direccionCalle"));
                 dueño.setDireccionNro(rsl.getInt("direccionNro"));
                 dueño.setTelefono(rsl.getInt("telefono"));
+                dueño.setIdConsulta(rsl.getInt("idConsulta"));
+                dueño.setValor(rsl.getInt("valor"));
                 lista.add(dueño);
 
             }
