@@ -11,18 +11,44 @@ package modelo;
  */
 public class Dueño {
     
-    private int rut,direccionNro, telefono;
     private String nombre, apellido, direccionCalle;
+    private int rut, direccionNro, telefono,idConsulta, valor;
 
     public Dueño() {
     }
 
-    public Dueño(int rut, int direccionNro, int telefono, String nombre, String apellido, String direccionCalle) {
+    public Dueño(String nombre, String apellido, String direccionCalle, int rut, int direccionNro, int telefono, int idConsulta, int valor) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.direccionCalle = direccionCalle;
         this.rut = rut;
         this.direccionNro = direccionNro;
         this.telefono = telefono;
+        this.idConsulta = idConsulta;
+        this.valor = valor;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    public String getDireccionCalle() {
+        return direccionCalle;
+    }
+
+    public void setDireccionCalle(String direccionCalle) {
         this.direccionCalle = direccionCalle;
     }
 
@@ -50,31 +76,20 @@ public class Dueño {
         this.telefono = telefono;
     }
 
-    public String getNombre() {
-        return nombre;
+    public int getIdConsulta() {
+        return idConsulta;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setIdConsulta(int idConsulta) {
+        this.idConsulta = idConsulta;
     }
 
-    public String getApellido() {
-        return apellido;
+    public int getValor() {
+        return valor;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setValor(int valor) {
+        this.valor = valor;
     }
-
-    public String getDireccionCalle() {
-        return direccionCalle;
-    }
-
-    public void setDireccionCalle(String direccionCalle) {
-        this.direccionCalle = direccionCalle;
-    }
-    
-    
-    
-    
+   
 }
