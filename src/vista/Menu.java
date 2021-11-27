@@ -112,10 +112,11 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 13, Short.MAX_VALUE))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(29, 29, 29)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -128,7 +129,6 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(39, 39, 39))
         );
 
-        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/perro.png"))); // NOI18N
         jMenu1.setText("Paciente");
 
         jmi_agregarPaciente.setText("Agregar");
@@ -193,14 +193,6 @@ public class Menu extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jmi_agregarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_agregarPacienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jmi_agregarPacienteActionPerformed
-
-    private void jmi_listarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_listarPacienteActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jmi_listarPacienteActionPerformed
-
     private void jmi_agregarDueñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_agregarDueñoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jmi_agregarDueñoActionPerformed
@@ -210,6 +202,14 @@ public class Menu extends javax.swing.JFrame {
         System.exit(0);
 
     }//GEN-LAST:event_jmi_salirActionPerformed
+
+    private void jmi_listarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_listarPacienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_listarPacienteActionPerformed
+
+    private void jmi_agregarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_agregarPacienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_agregarPacienteActionPerformed
 
     /**
      * @param args the command line arguments
