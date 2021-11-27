@@ -70,10 +70,10 @@ public class Menu extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("CLINICA VETERINARIA J&M");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/gatito.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/gatito.jpg"))); // NOI18N
         jLabel4.setText("jLabel4");
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/pata.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/pata.png"))); // NOI18N
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/huella.png"))); // NOI18N
 
