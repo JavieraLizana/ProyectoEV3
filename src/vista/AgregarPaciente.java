@@ -287,7 +287,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
                     .addComponent(jcbo_sexo, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
                             .addComponent(jtxt_edad, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -296,10 +296,13 @@ public class AgregarPaciente extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jtxt_peso, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtxt_procedimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(56, 56, 56))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                        .addGap(64, 64, 64))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jtxt_procedimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
@@ -388,7 +391,8 @@ public class AgregarPaciente extends javax.swing.JFrame {
 
         String nombre, especie, raza, procedimiento, dia, mes, año, fechaS, sexo;
         Date fecha = null;
-        int peso, edad;
+        int  edad;
+        double peso;
        
                 
 
@@ -451,7 +455,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
 
         try {
 
-            peso = Integer.parseInt(this.jtxt_peso.getText());
+            peso = Double.parseDouble(this.jtxt_peso.getText());
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "El peso debe ser númerico", "Error de validación", 2);
             this.jtxt_peso.requestFocus();
@@ -459,6 +463,11 @@ public class AgregarPaciente extends javax.swing.JFrame {
         }
         
         sexo = this.jcbo_sexo.getSelectedItem().toString();
+        
+        if(this.jcbo_sexo.getSelectedIndex()==0){
+        JOptionPane.showMessageDialog(this, "Seleccione una opción", "Error de validación", 2);
+        return;
+        }
        
    
         Paciente paciente = new Paciente(0, fecha, nombre, especie, raza, sexo, peso, edad, procedimiento);
@@ -544,6 +553,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         this.jtxt_nombre.setText("");
         this.jtxt_especie.setText("");
         this.jtxt_raza.setText("");
+        this.jcbo_sexo.setSelectedIndex(0);
         this.jtxt_peso.setText("");
         this.jtxt_edad.setText("");
         this.jtxt_procedimiento.setText("");

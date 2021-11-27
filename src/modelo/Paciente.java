@@ -13,13 +13,14 @@ public class Paciente {
     private Date fechaConsulta;
     private String nombreMascota, especie, raza;
     private String sexo;
-    private int peso, edad;
+    private double peso;
+    private int edad;
     private String procedimiento;
 
     public Paciente() {
     }
 
-    public Paciente(int idConsulta, Date fechaConsulta, String nombreMascota, String especie, String raza, String sexo, int peso, int edad, String procedimiento) {
+    public Paciente(int idConsulta, Date fechaConsulta, String nombreMascota, String especie, String raza, String sexo, double peso, int edad, String procedimiento) {
         this.idConsulta = idConsulta;
         this.fechaConsulta = fechaConsulta;
         this.nombreMascota = nombreMascota;
@@ -79,11 +80,11 @@ public class Paciente {
         this.sexo = sexo;
     }
 
-    public int getPeso() {
+    public double getPeso() {
         return peso;
     }
 
-    public void setPeso(int peso) {
+    public void setPeso(double peso) {
         this.peso = peso;
     }
 
@@ -102,4 +103,5 @@ public class Paciente {
     public void setProcedimiento(String procedimiento) {
         this.procedimiento = procedimiento;
     }
+
 }

@@ -26,15 +26,15 @@ public class RegistroPaciente {
 
             date = paciente.getFechaConsulta();
 
-            String query = "INSERT INTO paciente (fechaConsulta, nombreMascota, especie, raza, peso, edad, sexo, procedimiento) VALUES (?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO paciente (fechaConsulta, nombreMascota, especie, raza, sexo, peso, edad, procedimiento) VALUES (?,?,?,?,?,?,?,?)";
             PreparedStatement stmt = cnx.prepareStatement(query);
-            stmt.setDate(1, new java.sql.Date (date.getTime()));
+            stmt.setDate(1, new java.sql.Date(date.getTime()));
             stmt.setString(2, paciente.getNombreMascota());
             stmt.setString(3, paciente.getEspecie());
             stmt.setString(4, paciente.getRaza());
-            stmt.setInt(5, paciente.getPeso());
-            stmt.setInt(6, paciente.getEdad());
-            stmt.setString(7, paciente.getSexo());
+            stmt.setString(5, paciente.getSexo());
+            stmt.setDouble(6, paciente.getPeso());
+            stmt.setInt(7, paciente.getEdad());
             stmt.setString(8, paciente.getProcedimiento());
 
             stmt.executeUpdate();
@@ -63,15 +63,15 @@ public class RegistroPaciente {
 
             date = paciente.getFechaConsulta();
 
-            String query = "UPDATE paciente SET fechaConsulta=?, nombreMascota=?, especie=?, raza=?, edad, peso=?, sexo=?, procedimiento=? WHERE idConsulta=?";
+            String query = "UPDATE paciente SET fechaConsulta=?, nombreMascota=?, especie=?, raza=?, sexo=?, peso=?, edad=?, procedimiento=? WHERE idConsulta=?";
             PreparedStatement stmt = cnx.prepareStatement(query);
-            stmt.setDate(1, (java.sql.Date) paciente.getFechaConsulta());
+            stmt.setDate(1, new java.sql.Date(date.getTime()));
             stmt.setString(2, paciente.getNombreMascota());
             stmt.setString(3, paciente.getEspecie());
             stmt.setString(4, paciente.getRaza());
-            stmt.setInt(5, paciente.getEdad());
-            stmt.setInt(6, paciente.getPeso());
-            stmt.setString(7, paciente.getSexo());
+            stmt.setString(5, paciente.getSexo());
+            stmt.setDouble(6, paciente.getPeso());
+            stmt.setInt(7, paciente.getEdad());
             stmt.setString(8, paciente.getProcedimiento());
             stmt.setInt(9, paciente.getIdConsulta());
 
@@ -140,9 +140,9 @@ public class RegistroPaciente {
                 paciente.setNombreMascota(result.getString("nombreMascota"));
                 paciente.setEspecie(result.getString("especie"));
                 paciente.setRaza(result.getString("raza"));
-                paciente.setEdad(result.getInt("edad"));
-                paciente.setPeso(result.getInt("peso"));
                 paciente.setSexo(result.getString("sexo"));
+                paciente.setPeso(result.getDouble("peso"));
+                paciente.setEdad(result.getInt("edad"));
                 paciente.setProcedimiento(result.getString("procedimiento"));
 
             }
@@ -161,21 +161,20 @@ public class RegistroPaciente {
 
     public ArrayList<Paciente> buscarTodo() {
 
-        ArrayList <Paciente> lista = new ArrayList<>();
-        
-         try {
+        ArrayList<Paciente> lista = new ArrayList<>();
+
+        try {
 
             Conexion conx = new Conexion();
             Connection cnx = conx.obtenerConexion();
 
             String query = "SELECT * FROM paciente ORDER BY idConsulta";
             PreparedStatement stmt = cnx.prepareStatement(query);
-           
 
             ResultSet result = stmt.executeQuery();
 
             while (result.next()) {
-                
+
                 Paciente paciente = new Paciente();
 
                 paciente.setIdConsulta(result.getInt("idConsulta"));
@@ -183,13 +182,13 @@ public class RegistroPaciente {
                 paciente.setNombreMascota(result.getString("nombreMascota"));
                 paciente.setEspecie(result.getString("especie"));
                 paciente.setRaza(result.getString("raza"));
-                paciente.setEdad(result.getInt("edad"));
-                paciente.setPeso(result.getInt("peso"));
                 paciente.setSexo(result.getString("sexo"));
+                paciente.setPeso(result.getDouble("peso"));
+                paciente.setEdad(result.getInt("edad"));
                 paciente.setProcedimiento(result.getString("procedimiento"));
 
                 lista.add(paciente);
-                
+
             }
 
             result.close();
@@ -202,9 +201,5 @@ public class RegistroPaciente {
         }
 
         return lista;
-        
     }
-    
-
 }
-
