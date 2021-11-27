@@ -62,7 +62,7 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 204));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 2, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Bienvenidos!");
 
@@ -70,10 +70,9 @@ public class Menu extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("CLINICA VETERINARIA J&M");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/gatito.jpg"))); // NOI18N
-        jLabel4.setText("jLabel4");
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/gatito.jpg"))); // NOI18N
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/pata.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/pata.png"))); // NOI18N
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/huella.png"))); // NOI18N
 
@@ -115,7 +114,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 21, Short.MAX_VALUE))
+                        .addGap(0, 13, Short.MAX_VALUE))
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -129,6 +128,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(39, 39, 39))
         );
 
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/perro.png"))); // NOI18N
         jMenu1.setText("Paciente");
 
         jmi_agregarPaciente.setText("Agregar");
@@ -190,6 +190,7 @@ public class Menu extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmi_agregarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_agregarPacienteActionPerformed
