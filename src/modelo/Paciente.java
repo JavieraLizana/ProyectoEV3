@@ -9,23 +9,26 @@ import java.util.Date;
  */
 public class Paciente {
 
-    private int idConsulta, edad, peso;
-    private String nombreMascota, especie, raza, sexo,procedimiento;
+    private int idConsulta;
     private Date fechaConsulta;
+    private String nombreMascota, especie, raza;
+    private String sexo;
+    private int peso, edad;
+    private String procedimiento;
 
     public Paciente() {
     }
 
-    public Paciente(int idConsulta, int edad, int peso, String nombreMascota, String especie, String raza, String sexo, String procedimiento, Date fechaConsulta) {
+    public Paciente(int idConsulta, Date fechaConsulta, String nombreMascota, String especie, String raza, String sexo, int peso, int edad, String procedimiento) {
         this.idConsulta = idConsulta;
-        this.edad = edad;
-        this.peso = peso;
+        this.fechaConsulta = fechaConsulta;
         this.nombreMascota = nombreMascota;
         this.especie = especie;
         this.raza = raza;
         this.sexo = sexo;
+        this.peso = peso;
+        this.edad = edad;
         this.procedimiento = procedimiento;
-        this.fechaConsulta = fechaConsulta;
     }
 
     public int getIdConsulta() {
@@ -36,20 +39,12 @@ public class Paciente {
         this.idConsulta = idConsulta;
     }
 
-    public int getEdad() {
-        return edad;
+    public Date getFechaConsulta() {
+        return fechaConsulta;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
-    }
-
-    public int getPeso() {
-        return peso;
-    }
-
-    public void setPeso(int peso) {
-        this.peso = peso;
+    public void setFechaConsulta(Date fechaConsulta) {
+        this.fechaConsulta = fechaConsulta;
     }
 
     public String getNombreMascota() {
@@ -84,6 +79,22 @@ public class Paciente {
         this.sexo = sexo;
     }
 
+    public int getPeso() {
+        return peso;
+    }
+
+    public void setPeso(int peso) {
+        this.peso = peso;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
     public String getProcedimiento() {
         return procedimiento;
     }
@@ -91,14 +102,4 @@ public class Paciente {
     public void setProcedimiento(String procedimiento) {
         this.procedimiento = procedimiento;
     }
-
-    public Date getFechaConsulta() {
-        return fechaConsulta;
-    }
-
-    public void setFechaConsulta(Date fechaConsulta) {
-        this.fechaConsulta = fechaConsulta;
-    }
-
 }
-

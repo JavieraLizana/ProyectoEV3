@@ -26,14 +26,14 @@ public class RegistroPaciente {
 
             date = paciente.getFechaConsulta();
 
-            String query = "INSERT INTO paciente (fechaConsulta, nombreMascota, especie, raza, edad, peso, sexo, procedimiento) VALUES (?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO paciente (fechaConsulta, nombreMascota, especie, raza, peso, edad, sexo, procedimiento) VALUES (?,?,?,?,?,?,?,?)";
             PreparedStatement stmt = cnx.prepareStatement(query);
-            stmt.setDate(1, (java.sql.Date) paciente.getFechaConsulta());
+            stmt.setDate(1, new java.sql.Date (date.getTime()));
             stmt.setString(2, paciente.getNombreMascota());
             stmt.setString(3, paciente.getEspecie());
             stmt.setString(4, paciente.getRaza());
-            stmt.setInt(5, paciente.getEdad());
-            stmt.setInt(6, paciente.getPeso());
+            stmt.setInt(5, paciente.getPeso());
+            stmt.setInt(6, paciente.getEdad());
             stmt.setString(7, paciente.getSexo());
             stmt.setString(8, paciente.getProcedimiento());
 
@@ -143,6 +143,7 @@ public class RegistroPaciente {
                 paciente.setEdad(result.getInt("edad"));
                 paciente.setPeso(result.getInt("peso"));
                 paciente.setSexo(result.getString("sexo"));
+                paciente.setProcedimiento(result.getString("procedimiento"));
 
             }
 
@@ -185,6 +186,7 @@ public class RegistroPaciente {
                 paciente.setEdad(result.getInt("edad"));
                 paciente.setPeso(result.getInt("peso"));
                 paciente.setSexo(result.getString("sexo"));
+                paciente.setProcedimiento(result.getString("procedimiento"));
 
                 lista.add(paciente);
                 
@@ -202,6 +204,7 @@ public class RegistroPaciente {
         return lista;
         
     }
+    
 
 }
 

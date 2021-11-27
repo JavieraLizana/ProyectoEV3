@@ -67,7 +67,7 @@ public class InicioSesion extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/perro.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/animales.png"))); // NOI18N
         jLabel5.setText("jLabel5");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -92,8 +92,8 @@ public class InicioSesion extends javax.swing.JFrame {
                                     .addComponent(Jtxt_contraseña, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(82, 82, 82)))
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(44, 44, 44)))
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(46, 46, 46)
@@ -124,7 +124,7 @@ public class InicioSesion extends javax.swing.JFrame {
         );
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 51));
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Iniciar Sesión"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Iniciar Sesión", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
 
         jbtn_iniciarsesion.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jbtn_iniciarsesion.setText("INICIAR SESION");
@@ -148,10 +148,10 @@ public class InicioSesion extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addContainerGap()
                 .addComponent(jbtn_iniciarsesion)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jlbl_mensaje, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                .addComponent(jlbl_mensaje, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -167,8 +167,8 @@ public class InicioSesion extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -184,11 +184,11 @@ public class InicioSesion extends javax.swing.JFrame {
 
             if (usuario.equalsIgnoreCase("admin") && password == (1234)) {
                 this.jlbl_mensaje.setForeground(Color.white);
-                this.jlbl_mensaje.setText("Inicio de Sesión Exitosa");
+                this.jlbl_mensaje.setText("Inicio de Sesión Exitoso");
 
             } else {
                 this.jlbl_mensaje.setForeground(Color.red);
-                this.jlbl_mensaje.setText("Usuario o contraseña es incorrecto");
+                this.jlbl_mensaje.setText("Usuario o contraseña incorrecto");
             }
 
         } catch (Exception e) {
