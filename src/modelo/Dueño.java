@@ -11,21 +11,42 @@ package modelo;
  */
 public class Dueño {
     
+    private int rut;
+    private int idConsulta;
     private String nombre, apellido, direccionCalle;
-    private int rut, direccionNro, telefono,idConsulta, valor;
+    private int direccionNro, telefono;
+    private String tipoPago;
+    private int valor;
 
     public Dueño() {
     }
 
-    public Dueño(String nombre, String apellido, String direccionCalle, int rut, int direccionNro, int telefono, int idConsulta, int valor) {
+    public Dueño(int rut, int idConsulta, String nombre, String apellido, String direccionCalle, int direccionNro, int telefono, String tipoPago, int valor) {
+        this.rut = rut;
+        this.idConsulta = idConsulta;
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccionCalle = direccionCalle;
-        this.rut = rut;
         this.direccionNro = direccionNro;
         this.telefono = telefono;
-        this.idConsulta = idConsulta;
+        this.tipoPago = tipoPago;
         this.valor = valor;
+    }
+
+    public int getRut() {
+        return rut;
+    }
+
+    public void setRut(int rut) {
+        this.rut = rut;
+    }
+
+    public int getIdConsulta() {
+        return idConsulta;
+    }
+
+    public void setIdConsulta(int idConsulta) {
+        this.idConsulta = idConsulta;
     }
 
     public String getNombre() {
@@ -52,14 +73,6 @@ public class Dueño {
         this.direccionCalle = direccionCalle;
     }
 
-    public int getRut() {
-        return rut;
-    }
-
-    public void setRut(int rut) {
-        this.rut = rut;
-    }
-
     public int getDireccionNro() {
         return direccionNro;
     }
@@ -76,12 +89,12 @@ public class Dueño {
         this.telefono = telefono;
     }
 
-    public int getIdConsulta() {
-        return idConsulta;
+    public String getTipoPago() {
+        return tipoPago;
     }
 
-    public void setIdConsulta(int idConsulta) {
-        this.idConsulta = idConsulta;
+    public void setTipoPago(String tipoPago) {
+        this.tipoPago = tipoPago;
     }
 
     public int getValor() {
@@ -91,5 +104,6 @@ public class Dueño {
     public void setValor(int valor) {
         this.valor = valor;
     }
-   
+
 }
+
