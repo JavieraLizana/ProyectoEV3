@@ -5,9 +5,14 @@
  */
 package vista;
 
+import controlador.RegistroDueño;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import modelo.Dueño;
+
 /**
  *
- * @author maxim
+ * @author maximiliano y Javiera
  */
 public class ListarDueño extends javax.swing.JFrame {
 
@@ -30,12 +35,12 @@ public class ListarDueño extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        jtxt_dueño = new javax.swing.JTextField();
+        jbtn_buscar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jtbl_dueño = new javax.swing.JTable();
         jbtn_salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -44,19 +49,24 @@ public class ListarDueño extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setForeground(new java.awt.Color(153, 255, 0));
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("BUSCAR DUEÑO");
 
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Ingrese RUT del dueño:");
+        jLabel2.setText("Ingrese ID Consulta:");
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 0));
-        jButton1.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 0));
-        jButton1.setText("BUSCAR");
-        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtn_buscar.setBackground(new java.awt.Color(153, 153, 0));
+        jbtn_buscar.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        jbtn_buscar.setForeground(new java.awt.Color(0, 0, 0));
+        jbtn_buscar.setText("BUSCAR");
+        jbtn_buscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtn_buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_buscarActionPerformed(evt);
+            }
+        });
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/animal.png"))); // NOI18N
 
@@ -65,42 +75,41 @@ public class ListarDueño extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(141, 141, 141)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(163, 163, 163)
+                .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(352, 352, 352))
+                .addComponent(jtxt_dueño, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45)
+                .addComponent(jbtn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(7, Short.MAX_VALUE)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18))
+                        .addContainerGap()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jtxt_dueño, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jbtn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32))
         );
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 0));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jtbl_dueño.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
@@ -132,7 +141,7 @@ public class ListarDueño extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jtbl_dueño);
 
         jbtn_salir.setBackground(new java.awt.Color(0, 102, 102));
         jbtn_salir.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
@@ -192,6 +201,64 @@ public class ListarDueño extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jbtn_salirActionPerformed
 
+    private void jbtn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_buscarActionPerformed
+
+        int rut, idConsulta, direccionNro, telefono, valor;
+        String nombre, apellido, direccionCalle, tipoPago;
+
+        RegistroDueño regd = new RegistroDueño();
+
+        DefaultTableModel model = (DefaultTableModel) this.jtbl_dueño.getModel();
+
+        try {
+
+            rut = Integer.parseInt(this.jtxt_dueño.getText());
+
+        } catch (Exception e) {
+        }
+        rut = 0;
+
+        model.setRowCount(0);
+
+        if (rut == 0) {
+
+            ArrayList<Dueño> lista = regd.buscartodo();
+
+            for (Dueño due : lista) {
+
+                rut = due.getRut();
+                idConsulta = due.getIdConsulta();
+                nombre = due.getNombre();
+                apellido = due.getApellido();
+                direccionCalle = due.getDireccionCalle();
+                direccionNro = due.getDireccionNro();
+                telefono = due.getTelefono();
+                tipoPago = due.getTipoPago();
+                valor = due.getValor();
+
+                model.addRow(new Object[]{rut, idConsulta, nombre, apellido, direccionCalle, direccionNro, telefono, tipoPago, valor});
+            }
+        } else {
+
+            Dueño dueño = regd.buscarDueño(rut);
+
+            rut = dueño.getRut();
+            idConsulta = dueño.getIdConsulta();
+            nombre = dueño.getNombre();
+            apellido = dueño.getApellido();
+            direccionCalle = dueño.getDireccionCalle();
+            direccionNro = dueño.getDireccionNro();
+            telefono = dueño.getTelefono();
+            tipoPago = dueño.getTipoPago();
+            valor = dueño.getValor();
+
+            model.addRow(new Object[]{rut, idConsulta, nombre, apellido, direccionCalle, direccionNro, telefono, tipoPago, valor});
+
+        }
+
+
+    }//GEN-LAST:event_jbtn_buscarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -228,15 +295,15 @@ public class ListarDueño extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton jbtn_buscar;
     private javax.swing.JButton jbtn_salir;
+    private javax.swing.JTable jtbl_dueño;
+    private javax.swing.JTextField jtxt_dueño;
     // End of variables declaration//GEN-END:variables
 }

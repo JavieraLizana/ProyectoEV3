@@ -141,7 +141,7 @@ public class RegistroDueño {
             cnt.close();
 
         } catch (SQLException e) {
-            System.out.println("Error SQL al listar al paciente por id" + e.getMessage());
+            System.out.println("Error SQL al listar dueño" + e.getMessage());
 
         }
 
@@ -156,7 +156,7 @@ public class RegistroDueño {
             Conexion conx = new Conexion();
             Connection cnt = conx.obtenerConexion();
 
-            String query = "SELECT * FROM dueño ORDER BY apellido";
+            String query = "SELECT * FROM dueño ORDER BY idConsulta";
             PreparedStatement stmt = cnt.prepareStatement(query);
 
             ResultSet rsl = stmt.executeQuery();

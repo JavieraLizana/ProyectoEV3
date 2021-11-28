@@ -154,7 +154,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
             }
         });
 
-        jtxt_peso.setText("Ej: 5,5");
+        jtxt_peso.setText("Ej: 5.5");
         jtxt_peso.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jtxt_pesoFocusGained(evt);
