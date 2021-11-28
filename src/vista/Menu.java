@@ -139,7 +139,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu1.add(jmi_agregarPaciente);
 
-        jmi_listarPaciente.setText("Listar");
+        jmi_listarPaciente.setText("Buscar");
         jmi_listarPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmi_listarPacienteActionPerformed(evt);
@@ -159,7 +159,7 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu2.add(jmi_agregarDueño);
 
-        jmi_listarDueño.setText("Listar");
+        jmi_listarDueño.setText("Buscar");
         jMenu2.add(jmi_listarDueño);
 
         jMenuBar1.add(jMenu2);
@@ -204,7 +204,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jmi_salirActionPerformed
 
     private void jmi_listarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_listarPacienteActionPerformed
-        // TODO add your handling code here:
+        new ListarPaciente().setVisible(true);
+
     }//GEN-LAST:event_jmi_listarPacienteActionPerformed
 
     private void jmi_agregarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_agregarPacienteActionPerformed

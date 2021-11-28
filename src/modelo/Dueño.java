@@ -11,21 +11,17 @@ public class Dueño {
     private int rut;
     private String nombre, apellido, direccionCalle;
     private int direccionNro, telefono;
-    private String tipoPago;
-    private int valor;
 
     public Dueño() {
     }
 
-    public Dueño(int rut, String nombre, String apellido, String direccionCalle, int direccionNro, int telefono, String tipoPago, int valor) {
+    public Dueño(int rut, String nombre, String apellido, String direccionCalle, int direccionNro, int telefono) {
         this.rut = rut;
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccionCalle = direccionCalle;
         this.direccionNro = direccionNro;
         this.telefono = telefono;
-        this.tipoPago = tipoPago;
-        this.valor = valor;
     }
 
     public int getRut() {
@@ -75,26 +71,6 @@ public class Dueño {
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
-
-    public String getTipoPago() {
-        return tipoPago;
-    }
-
-    public void setTipoPago(String tipoPago) {
-        this.tipoPago = tipoPago;
-    }
-
-    public int getValor() {
-        return valor;
-    }
-
-    public void setValor(int valor) {
-        this.valor = valor;
-    }
-
-    
-    
-    
     
 }
 

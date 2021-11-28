@@ -47,10 +47,6 @@ public class AgregarDueño extends javax.swing.JFrame {
         jtxt_nro = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jcbo_tipoPago = new javax.swing.JComboBox<>();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jtxt_valor = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jbtn_guardar = new javax.swing.JButton();
         jbtn_salir = new javax.swing.JButton();
@@ -75,7 +71,7 @@ public class AgregarDueño extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel4.setText("TELEFONO");
+        jLabel4.setText("TELÉFONO");
 
         jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(0, 0, 0));
@@ -85,7 +81,7 @@ public class AgregarDueño extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Nº");
 
-        jtxt_rutDueño.setText("Ingrese  RUT sin número verificador");
+        jtxt_rutDueño.setText("Ingrese  RUT sin dígito verificador");
         jtxt_rutDueño.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jtxt_rutDueñoFocusGained(evt);
@@ -139,28 +135,6 @@ public class AgregarDueño extends javax.swing.JFrame {
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/dueno.png"))); // NOI18N
         jLabel9.setText("jLabel9");
 
-        jcbo_tipoPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione...", "Efectivo\t", "Débito", "Crédito", "Depósito" }));
-        jcbo_tipoPago.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcbo_tipoPagoActionPerformed(evt);
-            }
-        });
-
-        jLabel11.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("TIPO PAGO");
-
-        jLabel12.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel12.setText("VALOR $");
-
-        jtxt_valor.setText("Ingrese valor consulta");
-        jtxt_valor.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jtxt_valorFocusGained(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -175,22 +149,17 @@ public class AgregarDueño extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(62, 62, 62)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel5)
-                                            .addComponent(jLabel11)
-                                            .addComponent(jLabel12)))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addGap(25, 25, 25)
-                                        .addComponent(jLabel1)))
+                                .addGap(62, 62, 62)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5))
                                 .addGap(29, 29, 29))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel3))
                                 .addGap(31, 31, 31)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -201,8 +170,6 @@ public class AgregarDueño extends javax.swing.JFrame {
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addComponent(jtxt_nro))
-                                .addComponent(jcbo_tipoPago, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jtxt_valor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jtxt_telefono, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
@@ -232,9 +199,9 @@ public class AgregarDueño extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtxt_apellidoDueño, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -249,15 +216,7 @@ public class AgregarDueño extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtxt_telefono, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jcbo_tipoPago, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jtxt_valor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12))
-                .addGap(59, 59, 59))
+                .addGap(37, 37, 37))
         );
 
         jPanel2.setBackground(new java.awt.Color(102, 102, 102));
@@ -329,7 +288,7 @@ public class AgregarDueño extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -345,10 +304,6 @@ public class AgregarDueño extends javax.swing.JFrame {
     private void jbtn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_salirActionPerformed
         dispose();
     }//GEN-LAST:event_jbtn_salirActionPerformed
-
-    private void jcbo_tipoPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbo_tipoPagoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jcbo_tipoPagoActionPerformed
 
     private void jtxt_rutDueñoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtxt_rutDueñoFocusGained
         this.jtxt_rutDueño.setText("");
@@ -380,11 +335,6 @@ public class AgregarDueño extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jtxt_telefonoFocusGained
 
-    private void jtxt_valorFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtxt_valorFocusGained
-        this.jtxt_valor.setText("");
-
-    }//GEN-LAST:event_jtxt_valorFocusGained
-
     private void jbtn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_limpiarActionPerformed
 
         this.jtxt_rutDueño.setText("");
@@ -393,15 +343,15 @@ public class AgregarDueño extends javax.swing.JFrame {
         this.jtxt_calle.setText("");
         this.jtxt_nro.setText("");
         this.jtxt_telefono.setText("");
-        this.jcbo_tipoPago.setSelectedIndex(0);
-        this.jtxt_valor.setText("");
+        this.jbtn_salir.requestFocus();
+
 
     }//GEN-LAST:event_jbtn_limpiarActionPerformed
 
     private void jbtn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_guardarActionPerformed
 
-        String nombre, apellido, direccionCalle, tipoPago;
-        int rut, direccionNro,telefono, valor;
+        String nombre, apellido, direccionCalle;
+        int rut, direccionNro,telefono;
 
         try {
 
@@ -450,25 +400,8 @@ public class AgregarDueño extends javax.swing.JFrame {
             this.jtxt_telefono.requestFocus();
             return;
         }
-          
-         tipoPago = this.jcbo_tipoPago.getSelectedItem().toString();
          
-         if(this.jcbo_tipoPago.getSelectedIndex()==0){
-          JOptionPane.showMessageDialog(this, "Selecione una opción de pago", "Error de validación", 2);
-          return;
-         }
-         
-         
-          try {
-
-            valor = Integer.parseInt(this.jtxt_valor.getText());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "El total debe ser númerico", "Error de validación", 2);
-            this.jtxt_valor.requestFocus();
-            return;
-        }
-         
-        Dueño dueño = new Dueño (rut, nombre, apellido, direccionCalle, direccionNro, telefono, tipoPago, valor);  
+        Dueño dueño = new Dueño (rut, nombre, apellido, direccionCalle, direccionNro, telefono);  
         
         RegistroDueño regDue = new RegistroDueño();
         
@@ -519,8 +452,6 @@ public class AgregarDueño extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -533,13 +464,11 @@ public class AgregarDueño extends javax.swing.JFrame {
     private javax.swing.JButton jbtn_guardar;
     private javax.swing.JButton jbtn_limpiar;
     private javax.swing.JButton jbtn_salir;
-    private javax.swing.JComboBox<String> jcbo_tipoPago;
     private javax.swing.JTextField jtxt_apellidoDueño;
     private javax.swing.JTextField jtxt_calle;
     private javax.swing.JTextField jtxt_nombreDueño;
     private javax.swing.JTextField jtxt_nro;
     private javax.swing.JTextField jtxt_rutDueño;
     private javax.swing.JTextField jtxt_telefono;
-    private javax.swing.JTextField jtxt_valor;
     // End of variables declaration//GEN-END:variables
 }

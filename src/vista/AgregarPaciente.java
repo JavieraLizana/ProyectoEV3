@@ -482,14 +482,11 @@ public class AgregarPaciente extends javax.swing.JFrame {
         
         if (regPac.agregar(paciente)) {
            
-            JOptionPane.showMessageDialog(this, "Se Agregó paciente con éxito", "Error de validación", 1);
+            JOptionPane.showMessageDialog(this, "Se agregó paciente con éxito", "Error de validación", 1);
            
         } else {
-            JOptionPane.showMessageDialog(this, "Error al agregar nuevo paciente", "Error de validación", 0);
+            JOptionPane.showMessageDialog(this, "Error, ingrese un RUT existente","Error de validación", 0);
         }
-
-        
-        
 
     }//GEN-LAST:event_jbtn_guardarActionPerformed
 
