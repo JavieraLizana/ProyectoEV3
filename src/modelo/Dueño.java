@@ -9,7 +9,6 @@ package modelo;
 public class Dueño {
     
     private int rut;
-    private int idConsulta;
     private String nombre, apellido, direccionCalle;
     private int direccionNro, telefono;
     private String tipoPago;
@@ -18,9 +17,8 @@ public class Dueño {
     public Dueño() {
     }
 
-    public Dueño(int rut, int idConsulta, String nombre, String apellido, String direccionCalle, int direccionNro, int telefono, String tipoPago, int valor) {
+    public Dueño(int rut, String nombre, String apellido, String direccionCalle, int direccionNro, int telefono, String tipoPago, int valor) {
         this.rut = rut;
-        this.idConsulta = idConsulta;
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccionCalle = direccionCalle;
@@ -36,14 +34,6 @@ public class Dueño {
 
     public void setRut(int rut) {
         this.rut = rut;
-    }
-
-    public int getIdConsulta() {
-        return idConsulta;
-    }
-
-    public void setIdConsulta(int idConsulta) {
-        this.idConsulta = idConsulta;
     }
 
     public String getNombre() {
@@ -102,5 +92,9 @@ public class Dueño {
         this.valor = valor;
     }
 
+    
+    
+    
+    
 }
 

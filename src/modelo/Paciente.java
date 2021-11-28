@@ -10,6 +10,7 @@ import java.util.Date;
 public class Paciente {
 
     private int idConsulta;
+    private int rut;
     private Date fechaConsulta;
     private String nombreMascota, especie, raza;
     private String sexo;
@@ -20,8 +21,9 @@ public class Paciente {
     public Paciente() {
     }
 
-    public Paciente(int idConsulta, Date fechaConsulta, String nombreMascota, String especie, String raza, String sexo, double peso, int edad, String procedimiento) {
+    public Paciente(int idConsulta, int rut, Date fechaConsulta, String nombreMascota, String especie, String raza, String sexo, double peso, int edad, String procedimiento) {
         this.idConsulta = idConsulta;
+        this.rut = rut;
         this.fechaConsulta = fechaConsulta;
         this.nombreMascota = nombreMascota;
         this.especie = especie;
@@ -38,6 +40,14 @@ public class Paciente {
 
     public void setIdConsulta(int idConsulta) {
         this.idConsulta = idConsulta;
+    }
+
+    public int getRut() {
+        return rut;
+    }
+
+    public void setRut(int rut) {
+        this.rut = rut;
     }
 
     public Date getFechaConsulta() {
@@ -103,5 +113,6 @@ public class Paciente {
     public void setProcedimiento(String procedimiento) {
         this.procedimiento = procedimiento;
     }
+
 
 }

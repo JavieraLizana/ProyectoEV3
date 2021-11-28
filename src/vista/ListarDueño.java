@@ -55,7 +55,7 @@ public class ListarDueño extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("Ingrese ID Consulta:");
+        jLabel2.setText("Ingrese RUT:");
 
         jbtn_buscar.setBackground(new java.awt.Color(153, 153, 0));
         jbtn_buscar.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
@@ -81,9 +81,9 @@ public class ListarDueño extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(163, 163, 163)
+                .addGap(190, 190, 190)
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jtxt_dueño, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addComponent(jbtn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -111,26 +111,26 @@ public class ListarDueño extends javax.swing.JFrame {
 
         jtbl_dueño.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "RUT", "ID Consulta", "Nombre", "Apellido", "DireccionCalle", "DireccionNro", "Teléfono", "Tipo pago", "Valor $"
+                "RUT", "Nombre", "Apellido", "DireccionCalle", "DireccionNro", "Teléfono", "Tipo pago", "Valor $"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -215,8 +215,9 @@ public class ListarDueño extends javax.swing.JFrame {
             rut = Integer.parseInt(this.jtxt_dueño.getText());
 
         } catch (Exception e) {
+            rut = 0;
         }
-        rut = 0;
+        
 
         model.setRowCount(0);
 
@@ -227,7 +228,6 @@ public class ListarDueño extends javax.swing.JFrame {
             for (Dueño due : lista) {
 
                 rut = due.getRut();
-                idConsulta = due.getIdConsulta();
                 nombre = due.getNombre();
                 apellido = due.getApellido();
                 direccionCalle = due.getDireccionCalle();
@@ -236,14 +236,13 @@ public class ListarDueño extends javax.swing.JFrame {
                 tipoPago = due.getTipoPago();
                 valor = due.getValor();
 
-                model.addRow(new Object[]{rut, idConsulta, nombre, apellido, direccionCalle, direccionNro, telefono, tipoPago, valor});
+                model.addRow(new Object[]{rut, nombre, apellido, direccionCalle, direccionNro, telefono, tipoPago, valor});
             }
         } else {
 
             Dueño dueño = regd.buscarDueño(rut);
 
             rut = dueño.getRut();
-            idConsulta = dueño.getIdConsulta();
             nombre = dueño.getNombre();
             apellido = dueño.getApellido();
             direccionCalle = dueño.getDireccionCalle();
@@ -252,7 +251,7 @@ public class ListarDueño extends javax.swing.JFrame {
             tipoPago = dueño.getTipoPago();
             valor = dueño.getValor();
 
-            model.addRow(new Object[]{rut, idConsulta, nombre, apellido, direccionCalle, direccionNro, telefono, tipoPago, valor});
+            model.addRow(new Object[]{rut, nombre, apellido, direccionCalle, direccionNro, telefono, tipoPago, valor});
 
         }
 

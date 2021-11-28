@@ -26,16 +26,17 @@ public class RegistroPaciente {
 
             date = paciente.getFechaConsulta();
 
-            String query = "INSERT INTO paciente (fechaConsulta, nombreMascota, especie, raza, sexo, peso, edad, procedimiento) VALUES (?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO paciente (rut, fechaConsulta, nombreMascota, especie, raza, sexo, peso, edad, procedimiento) VALUES (?,?,?,?,?,?,?,?,?)";
             PreparedStatement stmt = cnx.prepareStatement(query);
-            stmt.setDate(1, new java.sql.Date(date.getTime()));
-            stmt.setString(2, paciente.getNombreMascota());
-            stmt.setString(3, paciente.getEspecie());
-            stmt.setString(4, paciente.getRaza());
-            stmt.setString(5, paciente.getSexo());
-            stmt.setDouble(6, paciente.getPeso());
-            stmt.setInt(7, paciente.getEdad());
-            stmt.setString(8, paciente.getProcedimiento());
+            stmt.setInt(1, paciente.getRut());
+            stmt.setDate(2, new java.sql.Date(date.getTime()));
+            stmt.setString(3, paciente.getNombreMascota());
+            stmt.setString(4, paciente.getEspecie());
+            stmt.setString(5, paciente.getRaza());
+            stmt.setString(6, paciente.getSexo());
+            stmt.setDouble(7, paciente.getPeso());
+            stmt.setInt(8, paciente.getEdad());
+            stmt.setString(9, paciente.getProcedimiento());
 
             stmt.executeUpdate();
             stmt.close();
@@ -63,17 +64,18 @@ public class RegistroPaciente {
 
             date = paciente.getFechaConsulta();
 
-            String query = "UPDATE paciente SET fechaConsulta=?, nombreMascota=?, especie=?, raza=?, sexo=?, peso=?, edad=?, procedimiento=? WHERE idConsulta=?";
+            String query = "UPDATE paciente SET rut =?, fechaConsulta=?, nombreMascota=?, especie=?, raza=?, sexo=?, peso=?, edad=?, procedimiento=? WHERE idConsulta=?";
             PreparedStatement stmt = cnx.prepareStatement(query);
-            stmt.setDate(1, new java.sql.Date(date.getTime()));
-            stmt.setString(2, paciente.getNombreMascota());
-            stmt.setString(3, paciente.getEspecie());
-            stmt.setString(4, paciente.getRaza());
-            stmt.setString(5, paciente.getSexo());
-            stmt.setDouble(6, paciente.getPeso());
-            stmt.setInt(7, paciente.getEdad());
-            stmt.setString(8, paciente.getProcedimiento());
-            stmt.setInt(9, paciente.getIdConsulta());
+            stmt.setInt(1, paciente.getRut());
+            stmt.setDate(2, new java.sql.Date(date.getTime()));
+            stmt.setString(3, paciente.getNombreMascota());
+            stmt.setString(4, paciente.getEspecie());
+            stmt.setString(5, paciente.getRaza());
+            stmt.setString(6, paciente.getSexo());
+            stmt.setDouble(7, paciente.getPeso());
+            stmt.setInt(8, paciente.getEdad());
+            stmt.setString(9, paciente.getProcedimiento());
+            stmt.setInt(10, paciente.getIdConsulta());
 
             stmt.executeUpdate();
             stmt.close();
@@ -136,6 +138,7 @@ public class RegistroPaciente {
             if (result.next()) {
 
                 paciente.setIdConsulta(result.getInt("idConsulta"));
+                paciente.setRut(result.getInt("rut"));
                 paciente.setFechaConsulta(result.getDate("fechaConsulta"));
                 paciente.setNombreMascota(result.getString("nombreMascota"));
                 paciente.setEspecie(result.getString("especie"));
@@ -178,6 +181,7 @@ public class RegistroPaciente {
                 Paciente paciente = new Paciente();
 
                 paciente.setIdConsulta(result.getInt("idConsulta"));
+                paciente.setRut(result.getInt("rut"));
                 paciente.setFechaConsulta(result.getDate("fechaConsulta"));
                 paciente.setNombreMascota(result.getString("nombreMascota"));
                 paciente.setEspecie(result.getString("especie"));
