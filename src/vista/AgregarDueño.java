@@ -493,11 +493,12 @@ public class AgregarDueño extends javax.swing.JFrame {
         
         RegistroDueño regDue = new RegistroDueño();
         
+        
         if (regDue.agregar(dueño)){
           JOptionPane.showMessageDialog(this, "Se agregó el dueño del paciente con éxito", "Error de validación", 1);
         
         }else{
-          JOptionPane.showMessageDialog(this, "Error al agregar dueño", "Error de validación", 0);
+          JOptionPane.showMessageDialog(this, "El ID de la consulta no existe", "Error de validación", 0);
         }
           
     }//GEN-LAST:event_jbtn_guardarActionPerformed
