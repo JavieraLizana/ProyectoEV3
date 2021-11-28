@@ -20,18 +20,18 @@ public class RegistroDueño {
         try {
             Conexion con = new Conexion();
             Connection cnt = con.obtenerConexion();
-            String query = "INSERT INTO dueño(rut, nombre, apellido, direccionCalle, direccionNro, telefono, idConsulta, valor) VALUES (?,?,?,?,?,?,?,?)";
+            String query = "INSERT INTO dueño(rut,idConsulta, nombre, apellido, direccionCalle, direccionNro, telefono, tipoPago, valor) VALUES (?,?,?,?,?,?,?,?,?)";
             PreparedStatement stmt = cnt.prepareStatement(query);
 
             stmt.setInt(1, dueño.getRut());
-            stmt.setString(2, dueño.getNombre());
-            stmt.setString(3, dueño.getApellido());
-            stmt.setString(4, dueño.getDireccionCalle());
-            stmt.setInt(5, dueño.getDireccionNro());
-            stmt.setInt(6, dueño.getTelefono());
-            stmt.setInt(7, dueño.getIdConsulta());
-            stmt.setInt(8, dueño.getValor());
-
+            stmt.setInt(2, dueño.getIdConsulta());
+            stmt.setString(3, dueño.getNombre());
+            stmt.setString(4, dueño.getApellido());
+            stmt.setString(5, dueño.getDireccionCalle());
+            stmt.setInt(6, dueño.getDireccionNro());
+            stmt.setInt(7, dueño.getTelefono());
+            stmt.setString(8, dueño.getTipoPago());
+            stmt.setInt(9, dueño.getValor());
 
             stmt.executeUpdate();
             stmt.close();
@@ -54,17 +54,18 @@ public class RegistroDueño {
             Conexion con = new Conexion();
             Connection cnt = con.obtenerConexion();
 
-            String query = "UPDATE dueño SET rut=?, nombre=?, apellido=?, direccionCalle=?, direccionNro=?, telefono=?, idConsulta=? , valor=? WHERE rut=?";
+            String query = "UPDATE dueño SET rut=?, idConsulta=?, nombre=?, apellido=?, direccionCalle=?, direccionNro=?, telefono=?, tipoPago=? , valor=? WHERE rut=?";
             PreparedStatement stmt = cnt.prepareStatement(query);
 
             stmt.setInt(1, dueño.getRut());
-            stmt.setString(2, dueño.getNombre());
-            stmt.setString(3, dueño.getApellido());
-            stmt.setString(4, dueño.getDireccionCalle());
-            stmt.setInt(5, dueño.getDireccionNro());
-            stmt.setInt(6, dueño.getTelefono());
-            stmt.setInt(7, dueño.getIdConsulta());
-            stmt.setInt(8, dueño.getValor());
+            stmt.setInt(2, dueño.getIdConsulta());
+            stmt.setString(3, dueño.getNombre());
+            stmt.setString(4, dueño.getApellido());
+            stmt.setString(5, dueño.getDireccionCalle());
+            stmt.setInt(6, dueño.getDireccionNro());
+            stmt.setInt(7, dueño.getTelefono());
+            stmt.setString(8, dueño.getTipoPago());
+            stmt.setInt(9, dueño.getValor());
 
             stmt.executeUpdate();
             stmt.close();
@@ -124,12 +125,13 @@ public class RegistroDueño {
             if (rsl.next()) {
 
                 dueño.setRut(rsl.getInt("rut"));
+                dueño.setIdConsulta(rsl.getInt("idConsulta"));
                 dueño.setNombre(rsl.getString("nombre"));
                 dueño.setApellido(rsl.getString("apellido"));
                 dueño.setDireccionCalle(rsl.getString("direccionCalle"));
                 dueño.setDireccionNro(rsl.getInt("dreccionNro"));
                 dueño.setTelefono(rsl.getInt("telefono"));
-               dueño.setIdConsulta(rsl.getInt("idConsulta"));
+                dueño.setTipoPago(rsl.getString("tipoPago"));
                 dueño.setValor(rsl.getInt("valor"));
 
             }
@@ -164,12 +166,13 @@ public class RegistroDueño {
                 Dueño dueño = new Dueño();
 
                 dueño.setRut(rsl.getInt("rut"));
+                dueño.setIdConsulta(rsl.getInt("idConsulta"));
                 dueño.setNombre(rsl.getString("nombre"));
                 dueño.setApellido(rsl.getString("apellido"));
                 dueño.setDireccionCalle(rsl.getString("direccionCalle"));
                 dueño.setDireccionNro(rsl.getInt("direccionNro"));
                 dueño.setTelefono(rsl.getInt("telefono"));
-                dueño.setIdConsulta(rsl.getInt("idConsulta"));
+                dueño.setTipoPago(rsl.getString("tipoPago"));
                 dueño.setValor(rsl.getInt("valor"));
                 lista.add(dueño);
 
@@ -179,7 +182,7 @@ public class RegistroDueño {
             cnt.close();
 
         } catch (Exception e) {
-            System.out.println("Error SQL al listr todos los dueños." + e.getMessage());
+            System.out.println("Error SQL al listar todos los dueños." + e.getMessage());
         }
         return lista;
     }
