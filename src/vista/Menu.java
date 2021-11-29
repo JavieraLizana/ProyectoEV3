@@ -16,8 +16,9 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,6 +32,10 @@ public class Menu extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jMenu7 = new javax.swing.JMenu();
+        jMenu8 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -41,11 +46,23 @@ public class Menu extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
         jmi_agregarPaciente = new javax.swing.JMenuItem();
+        jmi_actPaciente = new javax.swing.JMenuItem();
+        jmi_eliminarPac = new javax.swing.JMenuItem();
         jmi_listarPaciente = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
         jmi_agregarDueño = new javax.swing.JMenuItem();
+        jmi_actDueño = new javax.swing.JMenuItem();
+        jmi_eliminarDueño = new javax.swing.JMenuItem();
         jmi_listarDueño = new javax.swing.JMenuItem();
+        jMenu9 = new javax.swing.JMenu();
+        jMenu10 = new javax.swing.JMenu();
+        jmi_agregarpago = new javax.swing.JMenuItem();
+        jmi_actualizarPago = new javax.swing.JMenuItem();
+        jmi_eliminarPago = new javax.swing.JMenuItem();
+        jmi_listarPago = new javax.swing.JMenuItem();
         jmi = new javax.swing.JMenu();
         jmi_salir = new javax.swing.JMenuItem();
 
@@ -56,6 +73,14 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar2.add(jMenu4);
 
         jMenuItem3.setText("jMenuItem3");
+
+        jMenu7.setText("File");
+        jMenuBar3.add(jMenu7);
+
+        jMenu8.setText("Edit");
+        jMenuBar3.add(jMenu8);
+
+        jMenuItem2.setText("jMenuItem2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Menú Principal - Clínica Veterinaria J&M");
@@ -131,13 +156,28 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu1.setText("Paciente");
 
+        jMenu5.setText("Opciones");
+
         jmi_agregarPaciente.setText("Agregar");
         jmi_agregarPaciente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmi_agregarPacienteActionPerformed(evt);
             }
         });
-        jMenu1.add(jmi_agregarPaciente);
+        jMenu5.add(jmi_agregarPaciente);
+
+        jmi_actPaciente.setText("Actualizar");
+        jmi_actPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_actPacienteActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jmi_actPaciente);
+
+        jmi_eliminarPac.setText("Eliminar");
+        jMenu5.add(jmi_eliminarPac);
+
+        jMenu1.add(jMenu5);
 
         jmi_listarPaciente.setText("Buscar");
         jmi_listarPaciente.addActionListener(new java.awt.event.ActionListener() {
@@ -151,18 +191,78 @@ public class Menu extends javax.swing.JFrame {
 
         jMenu2.setText("Dueño");
 
+        jMenu6.setText("Opciones");
+
         jmi_agregarDueño.setText("Agregar");
         jmi_agregarDueño.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmi_agregarDueñoActionPerformed(evt);
             }
         });
-        jMenu2.add(jmi_agregarDueño);
+        jMenu6.add(jmi_agregarDueño);
+
+        jmi_actDueño.setText("Actualizar");
+        jmi_actDueño.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_actDueñoActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jmi_actDueño);
+
+        jmi_eliminarDueño.setText("Eliminar");
+        jmi_eliminarDueño.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_eliminarDueñoActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jmi_eliminarDueño);
+
+        jMenu2.add(jMenu6);
 
         jmi_listarDueño.setText("Buscar");
+        jmi_listarDueño.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_listarDueñoActionPerformed(evt);
+            }
+        });
         jMenu2.add(jmi_listarDueño);
 
         jMenuBar1.add(jMenu2);
+
+        jMenu9.setText("Pago");
+
+        jMenu10.setText("Opciones");
+
+        jmi_agregarpago.setText("Agregar");
+        jmi_agregarpago.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_agregarpagoActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jmi_agregarpago);
+
+        jmi_actualizarPago.setText("Actualizar");
+        jmi_actualizarPago.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_actualizarPagoActionPerformed(evt);
+            }
+        });
+        jMenu10.add(jmi_actualizarPago);
+
+        jmi_eliminarPago.setText("Eliminar");
+        jMenu10.add(jmi_eliminarPago);
+
+        jMenu9.add(jMenu10);
+
+        jmi_listarPago.setText("Buscar");
+        jmi_listarPago.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_listarPagoActionPerformed(evt);
+            }
+        });
+        jMenu9.add(jmi_listarPago);
+
+        jMenuBar1.add(jMenu9);
 
         jmi.setText("Salir");
 
@@ -194,7 +294,7 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jmi_agregarDueñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_agregarDueñoActionPerformed
-        // TODO add your handling code here:
+        new AgregarDueño().setVisible(true);
     }//GEN-LAST:event_jmi_agregarDueñoActionPerformed
 
     private void jmi_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_salirActionPerformed
@@ -211,6 +311,35 @@ public class Menu extends javax.swing.JFrame {
     private void jmi_agregarPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_agregarPacienteActionPerformed
         new AgregarPaciente().setVisible(true);
     }//GEN-LAST:event_jmi_agregarPacienteActionPerformed
+
+    private void jmi_actualizarPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_actualizarPagoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_actualizarPagoActionPerformed
+
+    private void jmi_actPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_actPacienteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_actPacienteActionPerformed
+
+    private void jmi_listarDueñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_listarDueñoActionPerformed
+        new ListarDueño().setVisible(true);
+        
+    }//GEN-LAST:event_jmi_listarDueñoActionPerformed
+
+    private void jmi_listarPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_listarPagoActionPerformed
+        new ListarPago().setVisible(true);
+    }//GEN-LAST:event_jmi_listarPagoActionPerformed
+
+    private void jmi_agregarpagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_agregarpagoActionPerformed
+        new AgregarPago().setVisible(true);
+    }//GEN-LAST:event_jmi_agregarpagoActionPerformed
+
+    private void jmi_actDueñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_actDueñoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_actDueñoActionPerformed
+
+    private void jmi_eliminarDueñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_eliminarDueñoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_eliminarDueñoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -256,18 +385,34 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu10;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar3;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu jmi;
+    private javax.swing.JMenuItem jmi_actDueño;
+    private javax.swing.JMenuItem jmi_actPaciente;
+    private javax.swing.JMenuItem jmi_actualizarPago;
     private javax.swing.JMenuItem jmi_agregarDueño;
     private javax.swing.JMenuItem jmi_agregarPaciente;
+    private javax.swing.JMenuItem jmi_agregarpago;
+    private javax.swing.JMenuItem jmi_eliminarDueño;
+    private javax.swing.JMenuItem jmi_eliminarPac;
+    private javax.swing.JMenuItem jmi_eliminarPago;
     private javax.swing.JMenuItem jmi_listarDueño;
     private javax.swing.JMenuItem jmi_listarPaciente;
+    private javax.swing.JMenuItem jmi_listarPago;
     private javax.swing.JMenuItem jmi_salir;
     // End of variables declaration//GEN-END:variables
 }

@@ -20,6 +20,7 @@ public class RegistroDueño {
         try {
             Conexion con = new Conexion();
             Connection cnt = con.obtenerConexion();
+            
             String query = "INSERT INTO dueño(rut, nombre, apellido, direccionCalle, direccionNro, telefono) VALUES (?,?,?,?,?,?)";
             PreparedStatement stmt = cnt.prepareStatement(query);
 
@@ -170,7 +171,7 @@ public class RegistroDueño {
             stmt.close();
             cnt.close();
 
-        } catch (Exception e) {
+        } catch (SQLException e) {
             System.out.println("Error SQL al listar todos los dueños." + e.getMessage());
         }
         return lista;

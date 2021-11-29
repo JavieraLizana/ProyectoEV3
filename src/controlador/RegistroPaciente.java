@@ -120,7 +120,7 @@ public class RegistroPaciente {
 
     }
 
-    public Paciente buscarPaciente(int idConsulta) {
+    public Paciente buscarPaciente(int rut) {
 
         Paciente paciente = new Paciente();
 
@@ -129,9 +129,9 @@ public class RegistroPaciente {
             Conexion conx = new Conexion();
             Connection cnx = conx.obtenerConexion();
 
-            String query = "SELECT * FROM paciente WHERE idConsulta=?";
+            String query = "SELECT * FROM paciente WHERE rut=?";
             PreparedStatement stmt = cnx.prepareStatement(query);
-            stmt.setInt(1, idConsulta);
+            stmt.setInt(1, rut);
 
             ResultSet result = stmt.executeQuery();
 
@@ -155,7 +155,7 @@ public class RegistroPaciente {
             cnx.close();
 
         } catch (SQLException e) {
-            System.out.println("Error SQL al listar al paciente por id" + e.getMessage());
+            System.out.println("Error SQL al listar al paciente por RUT" + e.getMessage());
 
         }
 
