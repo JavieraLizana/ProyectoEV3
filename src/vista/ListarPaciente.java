@@ -43,6 +43,8 @@ public class ListarPaciente extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jtbl_tablaPaciente = new javax.swing.JTable();
         jbtn_salir = new javax.swing.JButton();
+        jbtn_actualizarPac = new javax.swing.JButton();
+        jbtn_accEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Buscar Paciente");
@@ -63,9 +65,9 @@ public class ListarPaciente extends javax.swing.JFrame {
             }
         });
 
-        jbtn_buscar.setBackground(new java.awt.Color(51, 51, 51));
-        jbtn_buscar.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        jbtn_buscar.setForeground(new java.awt.Color(0, 153, 102));
+        jbtn_buscar.setBackground(new java.awt.Color(153, 153, 0));
+        jbtn_buscar.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jbtn_buscar.setForeground(new java.awt.Color(0, 0, 0));
         jbtn_buscar.setText("BUSCAR");
         jbtn_buscar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtn_buscar.addActionListener(new java.awt.event.ActionListener() {
@@ -151,9 +153,9 @@ public class ListarPaciente extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jtbl_tablaPaciente);
 
-        jbtn_salir.setBackground(new java.awt.Color(51, 51, 51));
-        jbtn_salir.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
-        jbtn_salir.setForeground(new java.awt.Color(0, 153, 102));
+        jbtn_salir.setBackground(new java.awt.Color(0, 102, 51));
+        jbtn_salir.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jbtn_salir.setForeground(new java.awt.Color(0, 0, 0));
         jbtn_salir.setText("SALIR");
         jbtn_salir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtn_salir.addActionListener(new java.awt.event.ActionListener() {
@@ -162,27 +164,59 @@ public class ListarPaciente extends javax.swing.JFrame {
             }
         });
 
+        jbtn_actualizarPac.setBackground(new java.awt.Color(0, 102, 51));
+        jbtn_actualizarPac.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jbtn_actualizarPac.setForeground(new java.awt.Color(0, 0, 0));
+        jbtn_actualizarPac.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/acceso-directo.png"))); // NOI18N
+        jbtn_actualizarPac.setText("ACTUALIZAR");
+        jbtn_actualizarPac.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtn_actualizarPac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_actualizarPacActionPerformed(evt);
+            }
+        });
+
+        jbtn_accEliminar.setBackground(new java.awt.Color(0, 102, 51));
+        jbtn_accEliminar.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jbtn_accEliminar.setForeground(new java.awt.Color(0, 0, 0));
+        jbtn_accEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/acceso-directo.png"))); // NOI18N
+        jbtn_accEliminar.setText("ELIMINAR");
+        jbtn_accEliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtn_accEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_accEliminarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 944, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(414, 414, 414)
-                .addComponent(jbtn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 944, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jbtn_actualizarPac, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(jbtn_accEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(jbtn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(267, 267, 267))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(jbtn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtn_accEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtn_actualizarPac, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -276,6 +310,15 @@ public class ListarPaciente extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jbtn_salirActionPerformed
 
+    private void jbtn_actualizarPacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_actualizarPacActionPerformed
+       
+    }//GEN-LAST:event_jbtn_actualizarPacActionPerformed
+
+    private void jbtn_accEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_accEliminarActionPerformed
+        new EliminarPaciente().setVisible(true);
+        
+    }//GEN-LAST:event_jbtn_accEliminarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -318,6 +361,8 @@ public class ListarPaciente extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton jbtn_accEliminar;
+    private javax.swing.JButton jbtn_actualizarPac;
     private javax.swing.JButton jbtn_buscar;
     private javax.swing.JButton jbtn_salir;
     private javax.swing.JTable jtbl_tablaPaciente;

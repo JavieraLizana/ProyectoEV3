@@ -407,7 +407,7 @@ public class AgregarDueño extends javax.swing.JFrame {
         
         
         if (regDue.agregar(dueño)){
-          JOptionPane.showMessageDialog(this, "Se agregó el dueño con éxito", "Error de validación", 1);
+          JOptionPane.showMessageDialog(this, "Se agregó el dueño con éxito", "Validación", 1);
         
         }else{
           JOptionPane.showMessageDialog(this, "Dueño ya existe", "Error de validación", 0);

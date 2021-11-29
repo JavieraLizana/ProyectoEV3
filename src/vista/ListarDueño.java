@@ -41,7 +41,9 @@ public class ListarDueño extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jtbl_dueño = new javax.swing.JTable();
+        jbtn_actualizarD = new javax.swing.JButton();
         jbtn_salir = new javax.swing.JButton();
+        jbtn_eliminarD = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Buscar Dueño");
@@ -143,14 +145,38 @@ public class ListarDueño extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jtbl_dueño);
 
+        jbtn_actualizarD.setBackground(new java.awt.Color(0, 102, 102));
+        jbtn_actualizarD.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        jbtn_actualizarD.setForeground(new java.awt.Color(0, 0, 0));
+        jbtn_actualizarD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/acceso-directo.png"))); // NOI18N
+        jbtn_actualizarD.setText("ACTUALIZAR");
+        jbtn_actualizarD.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtn_actualizarD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_actualizarDActionPerformed(evt);
+            }
+        });
+
         jbtn_salir.setBackground(new java.awt.Color(0, 102, 102));
         jbtn_salir.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jbtn_salir.setForeground(new java.awt.Color(0, 0, 0));
-        jbtn_salir.setText("Salir");
+        jbtn_salir.setText("SALIR");
         jbtn_salir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jbtn_salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_salirActionPerformed(evt);
+            }
+        });
+
+        jbtn_eliminarD.setBackground(new java.awt.Color(0, 102, 102));
+        jbtn_eliminarD.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        jbtn_eliminarD.setForeground(new java.awt.Color(0, 0, 0));
+        jbtn_eliminarD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/acceso-directo.png"))); // NOI18N
+        jbtn_eliminarD.setText("ELIMINAR");
+        jbtn_eliminarD.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtn_eliminarD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_eliminarDActionPerformed(evt);
             }
         });
 
@@ -162,19 +188,26 @@ public class ListarDueño extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 639, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(46, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jbtn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(300, 300, 300))
+                .addComponent(jbtn_actualizarD, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(jbtn_eliminarD, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(jbtn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(147, 147, 147))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addComponent(jbtn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtn_eliminarD, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtn_actualizarD, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -196,10 +229,10 @@ public class ListarDueño extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jbtn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_salirActionPerformed
-        dispose();
+    private void jbtn_actualizarDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_actualizarDActionPerformed
+        new ActualizarDueño().setVisible(true);
 
-    }//GEN-LAST:event_jbtn_salirActionPerformed
+    }//GEN-LAST:event_jbtn_actualizarDActionPerformed
 
     private void jbtn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_buscarActionPerformed
 
@@ -255,6 +288,15 @@ public class ListarDueño extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jbtn_buscarActionPerformed
 
+    private void jbtn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_salirActionPerformed
+        dispose();
+    }//GEN-LAST:event_jbtn_salirActionPerformed
+
+    private void jbtn_eliminarDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_eliminarDActionPerformed
+        new EliminarDueño().setVisible(true);
+
+    }//GEN-LAST:event_jbtn_eliminarDActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -297,7 +339,9 @@ public class ListarDueño extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton jbtn_actualizarD;
     private javax.swing.JButton jbtn_buscar;
+    private javax.swing.JButton jbtn_eliminarD;
     private javax.swing.JButton jbtn_salir;
     private javax.swing.JTable jtbl_dueño;
     private javax.swing.JTextField jtxt_dueño;
