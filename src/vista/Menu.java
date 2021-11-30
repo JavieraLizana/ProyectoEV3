@@ -1,13 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package vista;
 
 /**
  *
- * @author javie
+ * @author javiera y Maximiliano
  */
 public class Menu extends javax.swing.JFrame {
 
@@ -45,18 +41,18 @@ public class Menu extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jmi_agregarPaciente = new javax.swing.JMenuItem();
-        jmi_actPaciente = new javax.swing.JMenuItem();
-        jmi_eliminarPac = new javax.swing.JMenuItem();
-        jmi_listarPaciente = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
         jmi_agregarDueño = new javax.swing.JMenuItem();
         jmi_actDueño = new javax.swing.JMenuItem();
         jmi_eliminarDueño = new javax.swing.JMenuItem();
         jmi_listarDueño = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jmi_agregarPaciente = new javax.swing.JMenuItem();
+        jmi_actPaciente = new javax.swing.JMenuItem();
+        jmi_eliminarPac = new javax.swing.JMenuItem();
+        jmi_listarPaciente = new javax.swing.JMenuItem();
         jMenu9 = new javax.swing.JMenu();
         jMenu10 = new javax.swing.JMenu();
         jmi_agregarpago = new javax.swing.JMenuItem();
@@ -137,7 +133,7 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -153,46 +149,6 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addGap(39, 39, 39))
         );
-
-        jMenu1.setText("Paciente");
-
-        jMenu5.setText("Opciones");
-
-        jmi_agregarPaciente.setText("Agregar");
-        jmi_agregarPaciente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmi_agregarPacienteActionPerformed(evt);
-            }
-        });
-        jMenu5.add(jmi_agregarPaciente);
-
-        jmi_actPaciente.setText("Actualizar");
-        jmi_actPaciente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmi_actPacienteActionPerformed(evt);
-            }
-        });
-        jMenu5.add(jmi_actPaciente);
-
-        jmi_eliminarPac.setText("Eliminar");
-        jmi_eliminarPac.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmi_eliminarPacActionPerformed(evt);
-            }
-        });
-        jMenu5.add(jmi_eliminarPac);
-
-        jMenu1.add(jMenu5);
-
-        jmi_listarPaciente.setText("Buscar");
-        jmi_listarPaciente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmi_listarPacienteActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jmi_listarPaciente);
-
-        jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Dueño");
 
@@ -233,6 +189,46 @@ public class Menu extends javax.swing.JFrame {
         jMenu2.add(jmi_listarDueño);
 
         jMenuBar1.add(jMenu2);
+
+        jMenu1.setText("Paciente");
+
+        jMenu5.setText("Opciones");
+
+        jmi_agregarPaciente.setText("Agregar");
+        jmi_agregarPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_agregarPacienteActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jmi_agregarPaciente);
+
+        jmi_actPaciente.setText("Actualizar");
+        jmi_actPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_actPacienteActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jmi_actPaciente);
+
+        jmi_eliminarPac.setText("Eliminar");
+        jmi_eliminarPac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_eliminarPacActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jmi_eliminarPac);
+
+        jMenu1.add(jMenu5);
+
+        jmi_listarPaciente.setText("Buscar");
+        jmi_listarPaciente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_listarPacienteActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jmi_listarPaciente);
+
+        jMenuBar1.add(jMenu1);
 
         jMenu9.setText("Pago");
 
@@ -362,38 +358,38 @@ public class Menu extends javax.swing.JFrame {
 
     /**
      * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Menu().setVisible(true);
-            }
-        });
-    }
+//     */
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(Menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new Menu().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
