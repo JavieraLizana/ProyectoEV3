@@ -82,6 +82,11 @@ public class ActualizarPaciente extends javax.swing.JFrame {
         jbtn_buscarID.setForeground(new java.awt.Color(204, 204, 204));
         jbtn_buscarID.setText("BUSCAR");
         jbtn_buscarID.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtn_buscarID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_buscarIDActionPerformed(evt);
+            }
+        });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/enfermo.png"))); // NOI18N
 
@@ -377,6 +382,35 @@ public class ActualizarPaciente extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Datos actualizados", "Aviso", 1);
 
     }//GEN-LAST:event_jbtn_guardarActionPerformed
+
+    private void jbtn_buscarIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_buscarIDActionPerformed
+
+        int idConsulta = Integer.parseInt(this.jtxt_idpaciente.getText());
+        
+        Paciente paciente = regPac.buscarPacienteActualizar(idConsulta);
+        
+        
+        int rut = paciente.getRut();
+        Date fechaConsulta = paciente.getFechaConsulta();
+        String nombreMascota = paciente.getNombreMascota();
+        String especie = paciente.getEspecie();
+        String raza = paciente.getRaza();
+        String sexo = paciente.getSexo();
+        Double peso = paciente.getPeso();
+        int edad = paciente.getEdad();
+        String procedimiento = paciente.getProcedimiento();
+        
+        this.jtxt_rutDueño.setText(String.valueOf(rut));
+        this.jtxt_fecha.setText(""+fechaConsulta);
+        this.jtxt_nombre.setText(nombreMascota);
+        this.jtxt_especie.setText(especie);
+        this.jtxt_raza.setText(raza);
+        this.jtxt_sexo.setText(sexo);
+        this.jtxt_peso.setText(""+peso);
+        this.jtxt_edad.setText(String.valueOf(edad));
+        this.jtxt_procedimiento.setText(procedimiento);
+     
+    }//GEN-LAST:event_jbtn_buscarIDActionPerformed
 
     /**
      * @param args the command line arguments

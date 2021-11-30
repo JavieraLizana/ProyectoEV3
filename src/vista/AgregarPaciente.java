@@ -304,7 +304,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
 
         jbtn_guardar.setBackground(new java.awt.Color(255, 153, 153));
-        jbtn_guardar.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jbtn_guardar.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jbtn_guardar.setForeground(new java.awt.Color(0, 0, 0));
         jbtn_guardar.setText("GUARDAR");
         jbtn_guardar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -315,7 +315,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         });
 
         jbtn_salir.setBackground(new java.awt.Color(255, 153, 153));
-        jbtn_salir.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jbtn_salir.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jbtn_salir.setForeground(new java.awt.Color(0, 0, 0));
         jbtn_salir.setText("SALIR");
         jbtn_salir.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -326,7 +326,7 @@ public class AgregarPaciente extends javax.swing.JFrame {
         });
 
         jbtn_limpiar.setBackground(new java.awt.Color(255, 153, 153));
-        jbtn_limpiar.setFont(new java.awt.Font("Comic Sans MS", 0, 14)); // NOI18N
+        jbtn_limpiar.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jbtn_limpiar.setForeground(new java.awt.Color(0, 0, 0));
         jbtn_limpiar.setText("LIMPIAR");
         jbtn_limpiar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));

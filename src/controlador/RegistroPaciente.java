@@ -161,6 +161,53 @@ public class RegistroPaciente {
 
         return paciente;
     }
+    
+    
+    
+     public Paciente buscarPacienteActualizar(int ideConsulta) {
+
+        Paciente paciente = new Paciente();
+
+        try {
+
+            Conexion conx = new Conexion();
+            Connection cnx = conx.obtenerConexion();
+
+            String query = "SELECT * FROM paciente WHERE idConsulta=?";
+            PreparedStatement stmt = cnx.prepareStatement(query);
+            stmt.setInt(1, ideConsulta);
+
+            ResultSet result = stmt.executeQuery();
+
+            if (result.next()) {
+
+                paciente.setIdConsulta(result.getInt("idConsulta"));
+                paciente.setRut(result.getInt("rut"));
+                paciente.setFechaConsulta(result.getDate("fechaConsulta"));
+                paciente.setNombreMascota(result.getString("nombreMascota"));
+                paciente.setEspecie(result.getString("especie"));
+                paciente.setRaza(result.getString("raza"));
+                paciente.setSexo(result.getString("sexo"));
+                paciente.setPeso(result.getDouble("peso"));
+                paciente.setEdad(result.getInt("edad"));
+                paciente.setProcedimiento(result.getString("procedimiento"));
+
+            }
+
+            result.close();
+            stmt.close();
+            cnx.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error SQL al listar al paciente por ID Consulta" + e.getMessage());
+
+        }
+
+        return paciente;
+    }
+    
+    
+    
 
     public ArrayList<Paciente> buscarTodo() {
 
