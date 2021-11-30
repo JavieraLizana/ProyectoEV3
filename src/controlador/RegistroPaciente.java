@@ -66,6 +66,7 @@ public class RegistroPaciente {
 
             String query = "UPDATE paciente SET rut =?, fechaConsulta=?, nombreMascota=?, especie=?, raza=?, sexo=?, peso=?, edad=?, procedimiento=? WHERE idConsulta=?";
             PreparedStatement stmt = cnx.prepareStatement(query);
+
             stmt.setInt(1, paciente.getRut());
             stmt.setDate(2, new java.sql.Date(date.getTime()));
             stmt.setString(3, paciente.getNombreMascota());
@@ -161,10 +162,8 @@ public class RegistroPaciente {
 
         return paciente;
     }
-    
-    
-    
-     public Paciente buscarPacienteActualizar(int ideConsulta) {
+
+    public Paciente buscarPacienteActualizar(int idConsulta) {
 
         Paciente paciente = new Paciente();
 
@@ -175,7 +174,7 @@ public class RegistroPaciente {
 
             String query = "SELECT * FROM paciente WHERE idConsulta=?";
             PreparedStatement stmt = cnx.prepareStatement(query);
-            stmt.setInt(1, ideConsulta);
+            stmt.setInt(1, idConsulta);
 
             ResultSet result = stmt.executeQuery();
 
@@ -205,9 +204,6 @@ public class RegistroPaciente {
 
         return paciente;
     }
-    
-    
-    
 
     public ArrayList<Paciente> buscarTodo() {
 
@@ -218,7 +214,7 @@ public class RegistroPaciente {
             Conexion conx = new Conexion();
             Connection cnx = conx.obtenerConexion();
 
-            String query = "SELECT * FROM paciente ORDER BY idConsulta";
+            String query = "SELECT * FROM paciente ORDER BY rut";
             PreparedStatement stmt = cnx.prepareStatement(query);
 
             ResultSet result = stmt.executeQuery();
@@ -247,7 +243,7 @@ public class RegistroPaciente {
             cnx.close();
 
         } catch (SQLException e) {
-            System.out.println("Error SQL al listar todos los paciente" + e.getMessage());
+            System.out.println("Error SQL al listar todos los pacientes" + e.getMessage());
 
         }
 

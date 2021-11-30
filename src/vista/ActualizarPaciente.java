@@ -1,6 +1,7 @@
 package vista;
 
 import controlador.RegistroPaciente;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -358,23 +359,24 @@ public class ActualizarPaciente extends javax.swing.JFrame {
 
         idConsulta = Integer.parseInt(this.jtxt_idpaciente.getText());
         rut = Integer.parseInt(this.jtxt_rutDueño.getText());
-        edad = Integer.parseInt(this.jtxt_edad.getText());
-        peso = Double.parseDouble(this.jtxt_peso.getText());
+
+        SimpleDateFormat formato = new SimpleDateFormat("dd/mm/yyyy");
+        Date fechaConsulta = null;
+
+        try {
+            fechaConsulta = formato.parse(this.jtxt_fecha.getText());
+
+        } catch (ParseException e) {
+            System.out.println("Error al actualizar fecha" + e.getMessage());
+        }
+
         nombrePaciente = this.jtxt_nombre.getText();
         especie = this.jtxt_especie.getText();
         raza = this.jtxt_raza.getText();
         sexo = this.jtxt_sexo.getText();
+        peso = Double.parseDouble(this.jtxt_peso.getText());
+        edad = Integer.parseInt(this.jtxt_edad.getText());
         procedimiento = this.jtxt_procedimiento.getText();
-
-        SimpleDateFormat formato = new SimpleDateFormat("dd/mm/yyyy");
-        Date fecha;
-
-        try {
-            fecha = formato.parse(this.jtxt_fecha.getText());
-
-        } catch (Exception e) {
-            System.out.println("Error en al actualizar fecha" + e.getMessage());
-        }
 
         Paciente paciente = new Paciente();
 
@@ -386,10 +388,9 @@ public class ActualizarPaciente extends javax.swing.JFrame {
     private void jbtn_buscarIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_buscarIDActionPerformed
 
         int idConsulta = Integer.parseInt(this.jtxt_idpaciente.getText());
-        
+
         Paciente paciente = regPac.buscarPacienteActualizar(idConsulta);
-        
-        
+
         int rut = paciente.getRut();
         Date fechaConsulta = paciente.getFechaConsulta();
         String nombreMascota = paciente.getNombreMascota();
@@ -399,53 +400,53 @@ public class ActualizarPaciente extends javax.swing.JFrame {
         Double peso = paciente.getPeso();
         int edad = paciente.getEdad();
         String procedimiento = paciente.getProcedimiento();
-        
+
         this.jtxt_rutDueño.setText(String.valueOf(rut));
-        this.jtxt_fecha.setText(""+fechaConsulta);
+        this.jtxt_fecha.setText("" + fechaConsulta);
         this.jtxt_nombre.setText(nombreMascota);
         this.jtxt_especie.setText(especie);
         this.jtxt_raza.setText(raza);
         this.jtxt_sexo.setText(sexo);
-        this.jtxt_peso.setText(""+peso);
+        this.jtxt_peso.setText("" + peso);
         this.jtxt_edad.setText(String.valueOf(edad));
         this.jtxt_procedimiento.setText(procedimiento);
-     
+
     }//GEN-LAST:event_jbtn_buscarIDActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ActualizarPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ActualizarPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ActualizarPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ActualizarPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ActualizarPaciente().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(ActualizarPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(ActualizarPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(ActualizarPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(ActualizarPaciente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new ActualizarPaciente().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

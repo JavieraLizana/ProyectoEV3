@@ -257,7 +257,7 @@ public class ListarPaciente extends javax.swing.JFrame {
 
             rut = Integer.parseInt(this.jtxt_rut.getText());
 
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             rut = 0;
         }
 
