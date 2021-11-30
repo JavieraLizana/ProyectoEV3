@@ -353,24 +353,23 @@ public class ActualizarPaciente extends javax.swing.JFrame {
 
     private void jbtn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_guardarActionPerformed
 
-        int rut, idConsulta, edad;
+        int idConsulta, rut, edad;
         Double peso;
-        String nombrePaciente, procedimiento, sexo, especie, raza;
+        String nombreMascota, procedimiento, sexo, especie, raza;
 
         idConsulta = Integer.parseInt(this.jtxt_idpaciente.getText());
         rut = Integer.parseInt(this.jtxt_rutDueño.getText());
 
         SimpleDateFormat formato = new SimpleDateFormat("dd/mm/yyyy");
         Date fechaConsulta = null;
-
+        
         try {
             fechaConsulta = formato.parse(this.jtxt_fecha.getText());
-
         } catch (ParseException e) {
             System.out.println("Error al actualizar fecha" + e.getMessage());
         }
 
-        nombrePaciente = this.jtxt_nombre.getText();
+        nombreMascota = this.jtxt_nombre.getText();
         especie = this.jtxt_especie.getText();
         raza = this.jtxt_raza.getText();
         sexo = this.jtxt_sexo.getText();
@@ -378,7 +377,7 @@ public class ActualizarPaciente extends javax.swing.JFrame {
         edad = Integer.parseInt(this.jtxt_edad.getText());
         procedimiento = this.jtxt_procedimiento.getText();
 
-        Paciente paciente = new Paciente();
+        Paciente paciente = new Paciente(idConsulta, rut, fechaConsulta, nombreMascota, especie, raza, sexo, peso, edad, procedimiento);
 
         regPac.actualizar(paciente);
         JOptionPane.showMessageDialog(this, "Datos actualizados", "Aviso", 1);
