@@ -13,7 +13,7 @@ import modelo.Paciente;
 
 /**
  *
- * @author javie
+ * @author javiera y Maximiliano
  */
 public class ListarPaciente extends javax.swing.JFrame {
 
@@ -263,7 +263,7 @@ public class ListarPaciente extends javax.swing.JFrame {
 
         modelo.setRowCount(0);
 
-        if (rut == 0) { // listar todos los datos
+        if (rut == 0) { 
 
             ArrayList<Paciente> lista = regp.buscarTodo();
 
@@ -284,7 +284,7 @@ public class ListarPaciente extends javax.swing.JFrame {
 
             }
 
-        } else { // consulta por id
+        } else { 
 
             Paciente pct = regp.buscarPaciente(rut);
 
@@ -311,7 +311,7 @@ public class ListarPaciente extends javax.swing.JFrame {
     }//GEN-LAST:event_jbtn_salirActionPerformed
 
     private void jbtn_actualizarPacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_actualizarPacActionPerformed
-       
+        new ActualizarPaciente().setVisible(true);
     }//GEN-LAST:event_jbtn_actualizarPacActionPerformed
 
     private void jbtn_accEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_accEliminarActionPerformed

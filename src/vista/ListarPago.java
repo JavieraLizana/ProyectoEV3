@@ -43,6 +43,8 @@ public class ListarPago extends javax.swing.JFrame {
         jbtn_salir = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jbtl_pago = new javax.swing.JTable();
+        jbtn_actualizar = new javax.swing.JButton();
+        jbtn_eliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Buscar Pago");
@@ -157,18 +159,48 @@ public class ListarPago extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jbtl_pago);
 
+        jbtn_actualizar.setBackground(new java.awt.Color(0, 102, 102));
+        jbtn_actualizar.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jbtn_actualizar.setForeground(new java.awt.Color(0, 0, 0));
+        jbtn_actualizar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/acceso-directo.png"))); // NOI18N
+        jbtn_actualizar.setText("ACTUALIZAR");
+        jbtn_actualizar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtn_actualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_actualizarActionPerformed(evt);
+            }
+        });
+
+        jbtn_eliminar.setBackground(new java.awt.Color(0, 102, 102));
+        jbtn_eliminar.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        jbtn_eliminar.setForeground(new java.awt.Color(0, 0, 0));
+        jbtn_eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/imagen/acceso-directo.png"))); // NOI18N
+        jbtn_eliminar.setText("ELIMINAR");
+        jbtn_eliminar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtn_eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtn_eliminarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jbtn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(235, 235, 235))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(59, 59, 59)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 474, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jbtn_actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbtn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jbtn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                        .addGap(59, 59, 59)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 474, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -176,8 +208,11 @@ public class ListarPago extends javax.swing.JFrame {
                 .addGap(15, 15, 15)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jbtn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtn_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtn_actualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbtn_eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -263,6 +298,14 @@ public class ListarPago extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jbtn_salirActionPerformed
 
+    private void jbtn_actualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_actualizarActionPerformed
+        new ActualizarPago().setVisible(true);
+    }//GEN-LAST:event_jbtn_actualizarActionPerformed
+
+    private void jbtn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_eliminarActionPerformed
+        new EliminarPago().setVisible(true);
+    }//GEN-LAST:event_jbtn_eliminarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -307,6 +350,8 @@ public class ListarPago extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jbtl_pago;
+    private javax.swing.JButton jbtn_actualizar;
+    private javax.swing.JButton jbtn_eliminar;
     private javax.swing.JButton jbtn_salir;
     private javax.swing.JTextField jtxt_rut;
     // End of variables declaration//GEN-END:variables

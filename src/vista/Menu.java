@@ -255,6 +255,11 @@ public class Menu extends javax.swing.JFrame {
         jMenu10.add(jmi_actualizarPago);
 
         jmi_eliminarPago.setText("Eliminar");
+        jmi_eliminarPago.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_eliminarPagoActionPerformed(evt);
+            }
+        });
         jMenu10.add(jmi_eliminarPago);
 
         jMenu9.add(jMenu10);
@@ -318,11 +323,12 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jmi_agregarPacienteActionPerformed
 
     private void jmi_actualizarPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_actualizarPagoActionPerformed
-        // TODO add your handling code here:
+        new ActualizarPago().setVisible(true);
+        
     }//GEN-LAST:event_jmi_actualizarPagoActionPerformed
 
     private void jmi_actPacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_actPacienteActionPerformed
- 
+        new ActualizarPaciente().setVisible(true);
     }//GEN-LAST:event_jmi_actPacienteActionPerformed
 
     private void jmi_listarDueñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_listarDueñoActionPerformed
@@ -349,6 +355,10 @@ public class Menu extends javax.swing.JFrame {
     private void jmi_eliminarPacActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_eliminarPacActionPerformed
         new EliminarPaciente().setVisible(true);
     }//GEN-LAST:event_jmi_eliminarPacActionPerformed
+
+    private void jmi_eliminarPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_eliminarPagoActionPerformed
+        new EliminarPago().setVisible(true);
+    }//GEN-LAST:event_jmi_eliminarPagoActionPerformed
 
     /**
      * @param args the command line arguments

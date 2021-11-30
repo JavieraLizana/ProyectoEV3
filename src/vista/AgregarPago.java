@@ -11,7 +11,7 @@ import modelo.Pago;
 
 /**
  *
- * @author maxim
+ * @author maximiliano y Javiera
  */
 public class AgregarPago extends javax.swing.JFrame {
 

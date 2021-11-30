@@ -53,6 +53,7 @@ public class RegistroPago {
             stmt.setInt(1, pago.getRut());
             stmt.setString(2, pago.getTipoPago());
             stmt.setInt(3, pago.getValor());
+            stmt.setInt(4, pago.getIdPago());
 
             stmt.executeUpdate();
             stmt.close();
@@ -94,7 +95,7 @@ public class RegistroPago {
 
     }
 
-    public Pago buscarPago(int rut) {
+    public Pago buscarPago(int idPago) {
 
         Pago pago = new Pago();
 
@@ -103,9 +104,9 @@ public class RegistroPago {
             Conexion conx = new Conexion();
             Connection cnx = conx.obtenerConexion();
 
-            String query = "SELECT * FROM pago WHERE rut=?";
+            String query = "SELECT * FROM pago WHERE idPago=?";
             PreparedStatement stmt = cnx.prepareStatement(query);
-            stmt.setInt(1, rut);
+            stmt.setInt(1, idPago);
 
             ResultSet result = stmt.executeQuery();
 

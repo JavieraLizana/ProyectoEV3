@@ -14,7 +14,7 @@ import modelo.Paciente;
 
 /**
  *
- * @author javie
+ * @author javiera y Maximiliano
  */
 public class AgregarPaciente extends javax.swing.JFrame {
 
